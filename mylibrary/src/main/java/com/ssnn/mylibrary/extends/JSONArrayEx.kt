@@ -23,3 +23,12 @@ inline fun <T> JSONArray.toList(action: (JSONObject) -> T): List<T> {
     }
     return result
 }
+
+fun JSONArray?.getJSONObject(index: Int): JSONObject {
+    this ?: return JSONObject()
+    return if (index < this.length()) {
+        (this[index] as JSONObject)
+    } else {
+        JSONObject()
+    }
+}
