@@ -1,5 +1,10 @@
 package com.ssnn.mylibrary.extends
 
+import android.annotation.SuppressLint
+import android.widget.ImageView
+import androidx.core.content.res.ResourcesCompat
+import com.bumptech.glide.Glide
+
 
 /**
  *@Author: zw
@@ -10,16 +15,16 @@ package com.ssnn.mylibrary.extends
 /**
  * 加载图片
  */
-//fun ImageView.load(url: String) {
-//    ImageLoader.Builder().load(url).into(this).show()
-//}
-//
-///**
-// * 加载图片
-// */
-//fun ImageView.load(url: String, defImage: Int) {
-//    ImageLoader.Builder().error(defImage).load(url).into(this).show()
-//}
+fun ImageView.load(url: String) {
+    Glide.with(context).load(url).into(this)
+}
+
+/**
+ * 加载图片
+ */
+fun ImageView.load(url: String, defImage: Int) {
+    Glide.with(context).load(url).placeholder(defImage).error(defImage).into(this)
+}
 
 ///**
 // * 预加载图片
@@ -28,20 +33,20 @@ package com.ssnn.mylibrary.extends
 //    Glide.with(UtilsInit.getApp()).load(url).preload()
 //}
 
-//fun ImageView.loadImage(imageUrl: String) {
-//    if (imageUrl.isNetUrl()) {
-//        load(imageUrl)
-//    } else {
-//        loadByDrawableName(imageUrl)
-//    }
-//}
-//
-//fun ImageView.loadByDrawableName(imageUrl: String) {
-//    try {
-//        val context = UtilsInit.getApp()
-//        val resources = context.resources
-//        val imageId = resources.getIdentifier(imageUrl, "drawable", context.packageName)
-//        setImageDrawable(ResourcesCompat.getDrawable(resources, imageId, null))
-//    } catch (ignored: Exception) {
-//    }
-//}
+fun ImageView.loadImage(imageUrl: String) {
+    if (imageUrl.isNetUrl()) {
+        load(imageUrl)
+    } else {
+        loadByDrawableName(imageUrl)
+    }
+}
+
+@SuppressLint("DiscouragedApi")
+fun ImageView.loadByDrawableName(imageUrl: String) {
+    try {
+        val resources = context.resources
+        val imageId = resources.getIdentifier(imageUrl, "drawable", context.packageName)
+        setImageDrawable(ResourcesCompat.getDrawable(resources, imageId, null))
+    } catch (ignored: Exception) {
+    }
+}
