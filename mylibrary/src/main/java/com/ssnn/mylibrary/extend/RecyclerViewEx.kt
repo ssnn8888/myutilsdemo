@@ -1,4 +1,4 @@
-package com.ssnn.mylibrary.extends
+package com.ssnn.mylibrary.extend
 
 import androidx.recyclerview.widget.RecyclerView
 import com.ssnn.mylibrary.widget.RecyclerViewDivider

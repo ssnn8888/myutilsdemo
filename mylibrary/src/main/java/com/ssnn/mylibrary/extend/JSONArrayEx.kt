@@ -1,4 +1,4 @@
-package com.ssnn.mylibrary.extends
+package com.ssnn.mylibrary.extend
 
 import org.json.JSONArray
 import org.json.JSONObject

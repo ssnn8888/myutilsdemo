@@ -1,4 +1,4 @@
-package com.ssnn.mylibrary.extends
+package com.ssnn.mylibrary.extend
 
 import android.text.TextUtils
 import org.json.JSONObject

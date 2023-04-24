@@ -1,4 +1,4 @@
-package com.ssnn.mylibrary.extends
+package com.ssnn.mylibrary.extend
 
 import android.os.SystemClock
 import android.view.View

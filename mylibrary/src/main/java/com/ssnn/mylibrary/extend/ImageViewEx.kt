@@ -1,4 +1,4 @@
-package com.ssnn.mylibrary.extends
+package com.ssnn.mylibrary.extend
 
 import android.annotation.SuppressLint
 import android.widget.ImageView
