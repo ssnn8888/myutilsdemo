@@ -1,5 +1,5 @@
 before_install:
-  - sdk install 11.0.7.hs-adpt
-  - sdk use 11.0.7.hs-adpt
+  - sdk install 17.0.6
+  - sdk use 17.0.6
 jdk:
-  - openjdk11
+  - openjdk17
