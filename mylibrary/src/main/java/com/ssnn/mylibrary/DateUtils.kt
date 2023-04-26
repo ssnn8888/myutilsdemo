@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import java.text.ParsePosition
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.roundToInt
 
 
 /**
@@ -33,7 +34,7 @@ object DateUtils {
     fun isToday(timestamp: Long): Int {
         val before = getDayTimestamp(timestamp)
         val now = getDayTimestamp(System.currentTimeMillis())
-        return -((now - before) / (24 * 60 * 60 * 1000)).toInt()
+        return (-((now - before).toInt() / (24 * 60 * 60 * 1000.0f))).roundToInt()
     }
 
     /**
@@ -53,6 +54,7 @@ object DateUtils {
     fun showRealityDate(timestamp: Long) = when (isToday(timestamp)) {
         0 -> transToString(timestamp, "HH:mm")
         -1 -> transToString(timestamp, "昨天 HH:mm")
+        1 -> transToString(timestamp, "明天 HH:mm")
         else -> transToString(timestamp, "MM.dd HH:mm")
     }
 

@@ -19,9 +19,9 @@ private val mHints = LongArray(4)
 fun View.setOnMoreClickListener(onClick: () -> Unit) {
     setOnClickListener {
         //将mHints数组内的所有元素左移一个位置
-        System.arraycopy(mHints, 1, mHints, 0, mHints.size - 1);
+        System.arraycopy(mHints, 1, mHints, 0, mHints.size - 1)
         //获得当前系统已经启动的时间
-        mHints[mHints.size - 1] = SystemClock.uptimeMillis();
+        mHints[mHints.size - 1] = SystemClock.uptimeMillis()
         if (SystemClock.uptimeMillis() - mHints[0] <= 500) {
             onClick()
         }
